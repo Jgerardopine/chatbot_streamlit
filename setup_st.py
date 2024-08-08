@@ -101,18 +101,6 @@ def get_user_config():
         "GPT-4": "gpt-4" # Latest model from OpenAI. Recommended for complex chatbots, though has a lower token limit, higher token usage cost, and slower returns.
     }
 
-    # Custom CSS for sidebar elements
-    sidebar_css = """
-    <style>
-        .stRadio > label, .stRadio > div > div > label > div {
-            color: white;
-        
-    </style>
-    """
-
-    # Apply custom CSS
-    st.markdown(sidebar_css, unsafe_allow_html=True)
-
     # Display button choices in the sidebar of the app for the user to pick their desired model from the ones just defined.
     st.sidebar.markdown("<b style='color: darkgreen;'>Choose a GPT model:</b>", unsafe_allow_html=True) # HTML for beautifying the label, not necessary
     # Create the radio button. Label is hidden (since we have HTMl label), it defaults to the first option (turbo 16k) of the model_options above.
