@@ -48,6 +48,7 @@ try:
         index = load_data()
     chat_engine = index.as_chat_engine(chat_mode="condense_question", verbose=True)
 except Exception as e:
+    st.session_state['chat_engine'] = None
     st.sidebar.error(f"An error occurred while loading indexed data: {e}")
 
 # Warning to show that index is not currently being used if checkbox is unchecked
