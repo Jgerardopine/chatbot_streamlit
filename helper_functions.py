@@ -6,6 +6,13 @@ from index_functions import load_data
 from llama_index import VectorStoreIndex, ServiceContext, Document
 from llama_index.llms import OpenAI
 from llama_index import SimpleDirectoryReader
+from llama_index import GPTVectorStoreIndex, Document
+
+def create_index_from_text(text):
+    """Create an index from the given text."""
+    documents = [Document(text)]
+    index = GPTVectorStoreIndex.from_documents(documents)
+    return index
 
 # Main function to generate responses from OpenAI's API, not considering indexed data
 def generate_response(prompt, history, model_name, temperature):
