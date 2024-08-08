@@ -127,4 +127,7 @@ if prompt := st.chat_input("How would you like to reply?"):
             st.session_state.messages.append({"role": "assistant", "content": full_response})
 
     # Code to update the progress bar; assuming a message cap of 10 messages, but can be changed to be dynamic depending on your implementation.
-    current_progress = st.progress(st.session_state['message_count'] / 10)
+    #current_progress = st.progress(st.session_state['message_count'] / 10)
+    # Clamp the progress value to the range [0.0, 1.0]
+    progress_value = min(max(st.session_state['message_count'] / 10, 0.0), 1.0)
+    current_progress = st.progress(progress_value)
