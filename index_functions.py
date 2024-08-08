@@ -19,7 +19,7 @@ from llama_index import SimpleDirectoryReader
 # Download necessary nltk resources
 nltk.download('punkt')
 
-# Function to load in data found in the 'data' folder of the central repository
+# Function to load in data found in the 'data' folder of the central repository; To upload your own data, simply remove the existing data in that folder and upload your own. Don't forget to update the prompt below!
 @st.cache_resource(show_spinner=True)
 def load_data():
     with st.spinner(text="Loading and indexing the data – hang tight! This shouldn't take more than a minute."):

@@ -14,7 +14,7 @@ def create_index_from_text(text):
     service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5))
     index = VectorStoreIndex.from_documents(documents, service_context=service_context)
     return index
-
+    
 # Main function to generate responses from OpenAI's API, not considering indexed data
 def generate_response(prompt, history, model_name, temperature):
     # Fetching the last message sent by the chatbot from the conversation history
