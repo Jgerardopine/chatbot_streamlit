@@ -47,6 +47,7 @@ try:
     else:
         index = load_data()
     chat_engine = index.as_chat_engine(chat_mode="condense_question", verbose=True)
+    st.session_state['chat_engine'] = chat_engine  # Store chat_engine in session state
 except Exception as e:
     st.session_state['chat_engine'] = None
     st.sidebar.error(f"An error occurred while loading indexed data: {e}")
@@ -71,8 +72,10 @@ if prompt := st.chat_input("How would you like to reply?"):
     # Increment total message count
     st.session_state['message_count'] += 1
 
+    # Ensure chat_engine is defined
+    chat_engine = st.session_state.get('chat_engine')
     # Call either generate_response or generate_response_index based on st.session_state['use_index']
-    if st.session_state['use_index']:
+    if st.session_state['use_index'] and chat_engine:
         response_generated = generate_response_index(
             "You are an expert who is great at assisting users with whatever query they have",
             st.session_state.messages,
