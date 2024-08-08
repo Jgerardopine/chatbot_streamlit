@@ -11,7 +11,8 @@ from llama_index import GPTVectorStoreIndex, Document
 def create_index_from_text(text):
     """Create an index from the given text."""
     documents = [Document(text)]
-    index = GPTVectorStoreIndex.from_documents(documents)
+    service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5))
+    index = VectorStoreIndex.from_documents(documents, service_context=service_context)
     return index
 
 # Main function to generate responses from OpenAI's API, not considering indexed data
