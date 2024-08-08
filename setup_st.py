@@ -9,7 +9,7 @@ def set_design():
     # The main logo will be displayed in the middle column
     with col2:
         # Loading and displaying a logo image from the repository, and centering it
-        st.image("sample_logo.png", use_column_width=True)
+        st.image("gen_ai.png", use_column_width=True)
 
     # Adding a title to the Streamlit app, center-aligned
     st.markdown("<p style='text-align: center; font-size: 30px;'><b>[Sample Generative AI Chatbot]</b></p>", unsafe_allow_html=True)
