@@ -13,3 +13,4 @@ scikit-learn
 streamlit-extras
 requests
 llama-index
+langchain_community
