@@ -102,16 +102,16 @@ def get_user_config():
     }
 
     # Custom CSS for sidebar elements
-sidebar_css = """
-<style>
-    .stRadio > label, .stRadio > div > div > label > div {
-        color: white;
-    
-</style>
-"""
+    sidebar_css = """
+    <style>
+        .stRadio > label, .stRadio > div > div > label > div {
+            color: white;
+        
+    </style>
+    """
 
-# Apply custom CSS
-st.markdown(sidebar_css, unsafe_allow_html=True)
+    # Apply custom CSS
+    st.markdown(sidebar_css, unsafe_allow_html=True)
 
     # Display button choices in the sidebar of the app for the user to pick their desired model from the ones just defined.
     st.sidebar.markdown("<b style='color: darkgreen;'>Choose a GPT model:</b>", unsafe_allow_html=True) # HTML for beautifying the label, not necessary
