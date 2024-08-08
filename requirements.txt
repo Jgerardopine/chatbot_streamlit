@@ -14,3 +14,4 @@ streamlit-extras
 requests
 llama-index
 langchain_community
+setuptools
